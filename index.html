@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Spotify Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Music Explorer</h1>
+        <div class="header-controls">
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button id="view-liked">
+                <i class="fas fa-heart"></i>
+                <span id="liked-count">0</span>/15
+                <span class="sr-only">View liked songs</span>
+            </button>
+        </div>
+    </header>
+    
+    <main>
+        
+        <section class="controls" aria-label="Music controls">
+            <input type="text" id="search-input" placeholder="Search songs..." aria-label="Search songs">
+            <button id="search-btn">
+                <i class="fas fa-search"></i>
+                <span class="sr-only">Search</span>
+            </button>
+            <select id="genre-filter" aria-label="Filter by genre">
+                <option value="all">All Genres</option>
+                <option value="pop">Pop</option>
+                <option value="Hip Hop">Hip Hop</option>
+                <option value="jazz">Jazz</option>
+                <option value="Afrobeats">Afrobeats</option>
+                <option value="Arbantone">Arbantone</option>
+                <option value="Drills">Drills</option>
+                <option value="Rnb">Rnb</option>
+                <option value="Amapiano">Amapiano</option>
+            </select>
+        </section>
+        
+        <section class="music-container" id="music-container" aria-live="polite">
+        </section>
+    </main>
+    
+    <div class="player" id="player" aria-label="Audio player" hidden>
+        <div class="player-info">
+            <h4 id="now-playing-title">No song selected</h4>
+            <p id="now-playing-artist"></p>
+        </div>
+        <div class="player-controls">
+            <button id="prev-btn" aria-label="Previous track">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button id="play-btn" aria-label="Play">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="next-btn" aria-label="Next track">
+                <i class="fas fa-forward"></i>
+            </button> 
+            
+
+        </div>
+        <div class="progress-container">
+            <span id="current-time">0:00</span>
+            <progress id="progress-bar" value="0" max="100" aria-label="Playback progress"></progress>
+            <span id="duration">0:30</span>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
