@@ -223,7 +223,6 @@ progress::-webkit-progress-value {
     }
 }
 
-/* Dark mode styles */
 body.light-mode {
     background-color: var(--light);
     color: var(--dark);
